@@ -1,22 +1,16 @@
-const { createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
-    data(){
-        return{
-            disks:[]
-        };
-    },
-    mounted(){
-        this.getDisks();
-    },
-    methods: {
-        getDisks(){
-            axios
-            .get("http://localhost/Boolean-Esercizi/php-dischi-json/
-            ")
-            .then((resp)=>{
-                this.disks=resp.data.resuls;
-            });
-        },
-    },
+  data() {
+    return {
+      disks: [],
+    };
+  },
+  mounted() {
+    axios
+      .get("http://localhost/Boolean-Esercizi/php-dischi-json/server.php")
+      .then((resp) => {
+        this.disks = resp.data.results;
+      });
+  },
 }).mount("#app");
