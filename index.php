@@ -15,6 +15,25 @@
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-    
+    <div id="app">
+        <div class="container my-4">
+            <div class="row row-cols-4 g-4">
+                <div class="col" v-for="(disk,index) in disks" :key="index">
+                    <div class="card">
+                        <img :src="disk.poster" class="card-img-top" :alt="disk.title">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ disk.title }}</h5>
+                            <p class="card-text">{{ disk.author }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+ <script src="js/script.js"></script>
 </body>
 </html>
